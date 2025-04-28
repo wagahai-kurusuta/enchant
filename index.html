@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<title>test</title>
+</head>
+<body>
+<script>
+		var OE_no = ['HPアップ','攻撃アップ','クリティカルアップ','被ダメージ軽減', 'EXアップ', '通常攻撃ラッシュ+1確率',
+			'ユニゾンアタックダメージ倍率アップ', 'ランブルアタックダメージ倍率アップ', 
+			'3体以上ユニゾン後行動CT短縮(1CT)', 'ランブル勝利時EX増加', 'チャージ攻撃時EX増加', '有利属性ダメージ倍率増加'];
+		var InV_no = [8,8,8,8,20,60,30,30,2,0,0,3.4];
+		var W_no = [0.6,0.6,0.6,0.6,1,2,13.5,13.5,1.8,3,1,1.58];
+		var D_no = [20,20,20,20,20,20,20,20,10,10,10,20]
+		var R_no = [
+			[8.6,11,13.4,15.8,18.2],
+			[8.6,11,13.4,15.8,18.2],
+			[8.6,11,13.4,15.8,18.2],
+			[8.6,11,13.4,15.8,18.2],
+			[21,25,29,33,37],
+			[62,70,78,86,94],
+			[43.5,97.5,151.5,205.5,259.5],
+			[43.5,97.5,151.5,205.5,259.5],
+			[3.8,7.4,11,14.6,18.2],
+			[3,9,15,21,27],
+			[1,3,5,7,9],
+			[4.98,11.3,17.62,23.94,30.26]
+			];
+
+		function OverEnchant1() {
+			l1 = OE_no.length;
+			k1 = Math.floor(Math.random()*l1 + 1);
+			k1 = k1 - 1;
+         		A = OE_no[k1];
+			console.log(A);
+			k2 = Math.floor(Math.random() * D_no[k1] + 1);
+			B = Math.round((InV_no[k1] + W_no[k1] * k2) *10) / 10;
+			console.log(B);
+			if(B >= R_no[k1][4]){
+				C = "GOD";
+			}else if(B >= R_no[k1][3]){
+				C = "S";
+			}else if(B >= R_no[k1][2]){
+				C = "A";
+			}else if(B >= R_no[k1][1]){
+				C = "B";
+			}else{
+				C = "C";
+			}
+			console.log(C);
+
+			// 出力
+			var objTable  = document.getElementById('tableArea');
+			objTable.rows[4].cells[1].innerHTML = A;
+			objTable.rows[4].cells[2].innerHTML = B;
+			objTable.rows[4].cells[3].innerHTML = C;
+
+        		}		
+</script>
+<input type="button" value="テスト" onclick="OverEnchant1();"/><br />
+<div id="rewriteInArea">
+  <select id="rewriteRow" onchange="RowColChange()">
+    <option value="0" selected>ATK</option>
+    <option value="1">SPD</option>
+    <option value="2">DEF</option>
+    <option value="3">SUP</option>
+    <option value="4">HEAL</option>
+  </select>
+</div>
+<table id="tableArea">
+  <tr><th>エンチャント</th><th>効果</th><th>効果値</th><th>ランク</th></tr>
+  <tr><th>①</td><td>行1列1</td><td>行1列2</td><td>行1列3</td></tr>
+  <tr><th>②</td><td>行2列1</td><td>行2列2</td><td>行2列3</td></tr>
+  <tr><th>③</td><td>行3列1</td><td>行3列2</td><td>行3列3</td></tr>
+  <tr><th>オーバーエンチャント</td><td>行4列1</td><td>行4列2</td><td>行4列3</td></tr>
+</table>
+</body>
+</html>
