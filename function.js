@@ -145,7 +145,9 @@
 				m[s4] = tmp[k3];
 				A[s4] = E[tmp[k3]];
 				k4 = Math.floor(Math.random() * D[tmp[k3]] + 1);
+				
 			}else{
+				tmp[k3] = s4;
 				k4 = Math.floor(Math.random() * D[tmp[k3]] * 0.6 + 1 + D[tmp[k3]] * 0.4);	
 			}
 			
