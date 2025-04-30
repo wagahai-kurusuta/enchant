@@ -144,9 +144,9 @@
 				k3 = Math.floor(Math.random()*4);
 				m[s4] = tmp[k3];
 				A[s4] = E[tmp[k3]];
-				k4 = Math.floor(Math.random() * OD[tmp[k3]] + 1);
+				k4 = Math.floor(Math.random() * D[tmp[k3]] + 1);
 			}else{
-				k4 = Math.floor(Math.random() * OD[tmp[k3]] * 0.6 + 1 + OD[tmp[k3]] * 0.4);	
+				k4 = Math.floor(Math.random() * D[tmp[k3]] * 0.6 + 1 + D[tmp[k3]] * 0.4);	
 			}
 			
 			B[s4] = Math.round((InV[tmp[k3]] + W[tmp[k3]] * k4) *10) / 10;
