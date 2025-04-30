@@ -55,7 +55,7 @@
 				k2 = Math.floor(Math.random() * OD[k1] * 0.6 + 1 + OD[k1] * 0.4);
 			}
 			
-			OB = Math.round((OInV[k1] + OW[k1] * k2) *10) / 10;
+			OB = Math.round((OInV[k1] + OW[k1] * k2) *100) / 100;
 			console.log(OB);
 			if(OB >= OR[k1][4]){
 				OC = "GOD";
